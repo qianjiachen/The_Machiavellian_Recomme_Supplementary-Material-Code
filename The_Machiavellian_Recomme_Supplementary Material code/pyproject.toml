@@ -1,0 +1,88 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "machiavellian-recommender"
+version = "1.0.0"
+description = "Emergent Collusion and Mechanism Design in LLM-based Multi-Agent Ecosystems"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+    {name = "Anonymous", email = "anonymous@example.com"}
+]
+keywords = [
+    "multi-agent systems",
+    "reinforcement learning",
+    "large language models",
+    "recommendation systems",
+    "collusion detection",
+    "mechanism design"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "torch>=2.0.0",
+    "numpy>=1.24.0",
+    "transformers>=4.35.0",
+    "peft>=0.6.0",
+    "gymnasium>=0.29.0",
+    "matplotlib>=3.7.0",
+    "seaborn>=0.12.0",
+    "pyyaml>=6.0",
+    "tqdm>=4.65.0",
+    "tensorboard>=2.14.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "hypothesis>=6.82.0",
+    "black>=23.0.0",
+    "isort>=5.12.0",
+    "flake8>=6.1.0",
+]
+wandb = ["wandb>=0.15.0"]
+full = [
+    "accelerate>=0.24.0",
+    "bitsandbytes>=0.41.0",
+    "datasets>=2.14.0",
+    "stable-baselines3>=2.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/anonymous/machiavellian-recommender"
+Documentation = "https://github.com/anonymous/machiavellian-recommender#readme"
+Repository = "https://github.com/anonymous/machiavellian-recommender"
+
+[project.scripts]
+run-experiment = "scripts.run_experiment:main"
+run-ablation = "scripts.run_ablation:main"
+run-semi-real = "scripts.run_semi_real:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*", "scripts*"]
+
+[tool.black]
+line-length = 100
+target-version = ["py39", "py310", "py311"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-v --cov=src --cov-report=term-missing"
