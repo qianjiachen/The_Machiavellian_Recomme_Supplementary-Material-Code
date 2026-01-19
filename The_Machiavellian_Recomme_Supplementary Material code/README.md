@@ -479,11 +479,11 @@ export HF_TOKEN=your_token           # HuggingFace token for Llama
 If you find this code useful, please cite our paper:
 
 ```bibtex
-@inproceedings{anonymous2024machiavellian,
+@inproceedings{anonymous2026machiavellian,
   title={The Machiavellian Recommender: Emergent Collusion and Mechanism Design in Large Language Model-based Multi-Agent Ecosystems},
   author={Anonymous},
   booktitle={International Conference on Machine Learning},
-  year={2024}
+  year={2026}
 }
 ```
 
@@ -496,3 +496,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - This work was supported by [Anonymous Institution]
 - We thank the reviewers for their valuable feedback
 - Code structure inspired by CleanRL and Stable-Baselines3
+
